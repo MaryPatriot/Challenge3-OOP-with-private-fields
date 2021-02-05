@@ -9,27 +9,20 @@ namespace Challenge3_OOP_with_private_fields
     class BMI
     {
         
-            private static string _fullName;
-            private static double _mass;
-            private static double _height;
+            private  string _fullName;
+            private  double _mass;
+            private  double _height;
 
+        
 
-            public static string FullName { get => _fullName; set => _fullName = value; }
+        public BMI(string fullName, double mass, double height)
+        {
+            _fullName = fullName;
+            _mass = mass;
+            _height = height;
+        }
 
-
-
-            public static double Mass { get => _mass; set => _mass = value; }
-            public static double Weight { get => _height; set => _height = value; }
-
-            public BMI()
-            {
-                //this.FullName = _fullName;
-                //this.Mass = _mass;
-                //this.Height = _height;
-
-            }
-
-            public double CalculateBMI()
+        public double CalculateBMI()
             {
                 double BMICal = _mass / (Math.Pow(_height, 2));
                 return BMICal;
